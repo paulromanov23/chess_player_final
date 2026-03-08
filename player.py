@@ -3,6 +3,7 @@ import torch.nn as nn
 import chess
 import random
 from typing import Optional
+from chess_tournament.players import Player
 
 class RLTransformerPlayer(Player):
     """
@@ -111,3 +112,4 @@ class RLTransformerPlayer(Player):
             board = chess.Board(fen)
             moves = [m.uci() for m in board.legal_moves]
             return random.choice(moves) if moves else "0000"
+
