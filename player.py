@@ -5,7 +5,7 @@ import random
 from typing import Optional
 from chess_tournament.players import Player
 
-class RLTransformerPlayer(Player):
+class TransformerPlayer(Player):
     """
     All-in-one Chess Transformer Player. 
     Matches 10k RL Training Logic exactly.
@@ -112,4 +112,5 @@ class RLTransformerPlayer(Player):
             board = chess.Board(fen)
             moves = [m.uci() for m in board.legal_moves]
             return random.choice(moves) if moves else "0000"
+
 
