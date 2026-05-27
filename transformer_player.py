@@ -7,7 +7,6 @@ from typing import Optional
 class RLTransformerPlayer(Player):
     """
     All-in-one Chess Transformer Player. 
-    Matches 10k RL Training Logic exactly.
     """
     def __init__(self, name="RL_Transformer", model_path="parom23/chess_transformer"):
         super().__init__(name)
@@ -51,7 +50,7 @@ class RLTransformerPlayer(Player):
                 val = self.piece_token_map.get(piece.piece_type, 0)
                 if piece.color == chess.BLACK: val += 6
                 tokens.append(val)
-        # IMPORTANT: Must be LongTensor (Integers) for Embedding layer
+        # Must be LongTensor (Integers) for Embedding layer
         return torch.tensor(tokens, dtype=torch.long, device=self.device).clamp(0, 12).unsqueeze(0)
 
     def _load_model(self):
