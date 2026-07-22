@@ -1,4 +1,4 @@
-# Chess AI — 135M-Parameter Transformer + LoRA Fine-tune
+# Chess AI — 35M-Parameter Transformer + LoRA Fine-tune
 
 A transformer trained from scratch to play chess using reinforcement learning self-play, 
 plus a LoRA fine-tune of a 0.5B Qwen model — all built in PyTorch without wrappers 
